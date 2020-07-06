@@ -21,6 +21,15 @@ module  BelvoManager
       puts e.detail
     end
 
+    # BelvoManager::Transactions.new.create(data)
+    # data example: { link: 9e926ee9-611a-4255-8554-bd730bc0bd2f, date_from: '2010-02-02', date_to: '2020-02-10' }
+    def create(data)
+      @belvo.transactions.retrieve(data)
+    rescue Belvo::RequestError => e
+      puts e.status_code
+      puts e.detail
+    end
+
     # BelvoManager::Transactions.new.get_by_id(data)
     # data example: { id: 9e926ee9-611a-4255-8554-bd730bc0bd2f }
     def get_by_id(data)
