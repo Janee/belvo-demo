@@ -1,16 +1,12 @@
 # frozen_string_literal: false
 
 class StaticPagesController < ApplicationController
-
-  def initialize
-    @transactions_dates = {}
-    @balances = BelvoManager::Balances.new
-    @transactions_dates['date_from'] = Date.today.prev_month.strftime('%Y-%m-%d')
-    @transactions_dates['date_to'] = Date.yesterday.strftime('%Y-%m-%d')
-  end
-
   # Dashboard
   def index
+    @transactions_dates = {}
+    @transactions_dates['date_from'] = Date.today.prev_month.strftime('%Y-%m-%d')
+    @transactions_dates['date_to'] = Date.yesterday.strftime('%Y-%m-%d')
+    @balances = BelvoManager::Balances.new
     @owners_with_accounts = relate_accounts_with_owners
     @transactions = relate_transactions(@transactions_dates)
     @currencies = format_currencies(@balances.overview)
