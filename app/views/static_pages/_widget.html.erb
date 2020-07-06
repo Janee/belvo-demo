@@ -1,30 +1,36 @@
-<div class="row">
-  <input type="text" name="" value="" id="account_id">
-  <script type="text/javascript">
-    function onEventCallbackFunction (data){
-     alert(data);
-    }
-
-    function onExitCallbackFunction (data){
-     alert(data);
-    }
-
-    function successCallbackFunction (link_id, institution) {
-     alert(link_id);
-     alert(institution);
-    }
-
-    function openBelvoWidget() {
-      belvoSDK.createWidget(<%= BelvoManager::Widget.new.token %>, {
-        locale: 'en', // 'en' for English
-        company_name: "Janee Corp",
-        country_codes: ['MX'],
-        callback: (link, institution) => this.successCallbackFunction(link, institution),
-        onExit: (data) => this.onExitCallbackFunction(data),
-        onEvent: (data) => this.onEventCallbackFunction(data)
-      }).build();
-    }
-
-    document.getElementById("account_id").onclick(openBelvoWidget());
-  </script>
+<div id="belvo">
+  <div class="card">
+    <div class="card-body">
+      <%= hidden_field_tag(:access_token, @token["access"]) %>
+      <input type="button" name="" value="Open Widget" onclick="openBelvoWidget()">
+      <input type="text" name="" value="" id="account_id">
+    </div>
+  </div>
 </div>
+
+
+<script type="text/javascript">
+  var access_token = document.getElementById('access_token').value;
+  function onEventCallbackFunction (data){
+   alert(data);
+  }
+  function onExitCallbackFunction (data){
+   alert(data);
+  }
+  function successCallbackFunction (link_id, institution) {
+   alert(link_id);
+   alert(institution);
+   document.getElementById("account_id").value = link_id;
+  }
+  function openBelvoWidget() {
+    belvoSDK.createWidget(access_token, {
+      locale: 'en',
+      company_name: "Janee Corp",
+      country_codes: ['MX'],
+      callback: (link, institution) => this.successCallbackFunction(link, institution),
+      onExit: (data) => this.onExitCallbackFunction(data),
+      onEvent: (data) => this.onEventCallbackFunction(data)
+    }).build();
+  }
+
+</script>
