@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
   # Dashboard
   def index
     @balances = BelvoManager::Balances.new
-    
+    @owners_with_accounts = relate_accounts_with_owners
     @currencies = format(@balances.overview)
   end
 
@@ -19,5 +19,14 @@ class StaticPagesController < ApplicationController
       cu[1] << { values: aux }
     end
     currencies
+  end
+
+  def relate_accounts_with_owners
+    accounts = []
+    BelvoManager::Accounts.new.listed.each do |account|
+      aux = BelvoManager::Owners.new.create(account['link'])
+      accounts << aux
+    end
+    accounts[0]
   end
 end

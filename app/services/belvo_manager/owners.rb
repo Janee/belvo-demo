@@ -21,6 +21,15 @@ module  BelvoManager
       puts e.detail
     end
 
+    # BelvoManager::Owners.new.create(data)
+    # data example: { id: 9e926ee9-611a-4255-8554-bd730bc0bd2f }
+    def create(data)
+      @belvo.owners.retrieve(link: data)
+    rescue Belvo::RequestError => e
+      puts e.status_code
+      puts e.detail
+    end
+
     # BelvoManager::Owners.new.get_by_id(data)
     # data example: { id: 9e926ee9-611a-4255-8554-bd730bc0bd2f }
     def get_by_id(data)
