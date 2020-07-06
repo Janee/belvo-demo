@@ -1,0 +1,30 @@
+<div class="row">
+  <input type="text" name="" value="" id="account_id">
+  <script type="text/javascript">
+    function onEventCallbackFunction (data){
+     alert(data);
+    }
+
+    function onExitCallbackFunction (data){
+     alert(data);
+    }
+
+    function successCallbackFunction (link_id, institution) {
+     alert(link_id);
+     alert(institution);
+    }
+
+    function openBelvoWidget() {
+      belvoSDK.createWidget(<%= BelvoManager::Widget.new.token %>, {
+        locale: 'en', // 'en' for English
+        company_name: "Janee Corp",
+        country_codes: ['MX'],
+        callback: (link, institution) => this.successCallbackFunction(link, institution),
+        onExit: (data) => this.onExitCallbackFunction(data),
+        onEvent: (data) => this.onEventCallbackFunction(data)
+      }).build();
+    }
+
+    document.getElementById("account_id").onclick(openBelvoWidget());
+  </script>
+</div>
