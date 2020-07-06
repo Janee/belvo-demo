@@ -10,10 +10,10 @@ ___
 * Open Widget and link your account. _(Use dummy username and dummy password)_
 * Button **Account data**: Gets the account information related to the link; if the link is not in the list of current accounts retrieves it.
 * Button **All Data**: Gets all the data related to the sandbox account:
-** Pie charts per currency.
-** List of all Owners.
-** List of all Accounts.
-** Column Chart of Transactions types.
+  * Pie charts per currency.
+  * List of all Owners.
+  * List of all Accounts.
+  * Column Chart of Transactions types.
 
 ___
 
