@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails application deployed in Heroku Server.
 
-Things you may want to cover:
+* [Heroku Demo](https://desolate-crag-63710.herokuapp.com/)
+___
 
-* Ruby version
+## Instructions for testing
+* Enter to demo link.
+* Open Widget and link your account. _(Use dummy username and dummy password)_
+* Button **Account data**: Gets the account information related to the link; if the link is not in the list of current accounts retrieves it.
+* Button **All Data**: Gets all the data related to the sandbox account:
+** Pie charts per currency.
+** List of all Owners.
+** List of all Accounts.
+** Column Chart of Transactions types.
 
-* System dependencies
+___
 
-* Configuration
+### Feedback to Belvo:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Response request using ruby symbols not string keys.
+* Search endpoint to find accounts/other using different attributes ("link", "owner_id", etc.)
+* Full functional guide snippets.

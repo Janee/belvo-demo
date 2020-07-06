@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'static_pages#index'
+
+  get 'account/:id', to: 'static_pages#single_account', as: 'single_account'
+  get 'dashboard', to: 'static_pages#dashboard'
 end
