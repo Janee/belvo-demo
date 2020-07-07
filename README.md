@@ -47,6 +47,6 @@ ___
 ### Feedback to Belvo:
 
 * Response requests using ruby symbols instead of string keys.
-* Search endpoint to find accounts/other using different attributes ("link", "owner_id", etc.)
+* Filter and search doc from accounts/others while usinging different attributes in API Reference.
 * Guide with ready-to-test snippets.
 * Postman with default sandbox credentials.
