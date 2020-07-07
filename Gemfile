@@ -47,3 +47,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'belvo'
 gem 'chartkick'
+gem 'rack-cors'
