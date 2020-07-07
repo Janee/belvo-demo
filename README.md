@@ -1,13 +1,40 @@
 # README
 
-Ruby on Rails application deployed in Heroku Server.
+## Running in local environment
+* Depencencies:
+  * Postgresql
+  * Yarn
+  * NodeJS
+  * Ruby 2.6
+  * Rails 6
 
-* [Heroku Demo](https://desolate-crag-63710.herokuapp.com/)
+```
+git clone git@github.com:Janee/belvo-demo.git
+cd belvo-demo
+bundle install
+rake db:setup
+```
+
+**Make sure to add your own Belvo credentials**
+```
+EDITOR='vim --wait' rails credentials:edit
+```
+
+On editor:
+```
+belvo:
+  secret_id: <YourSecretId>
+  secret_pass: <YourSecretPassword>
+```
+
 ___
 
-## Instructions for testing
-* Enter to demo link.
-* Open Widget and link your account. _(Use dummy username and dummy password)_
+### Instructions for testing
+Ruby on Rails application deployed in Heroku Server.
+
+* Enter to [Heroku Demo App](https://desolate-crag-63710.herokuapp.com/)
+* Click in **Open Widget** button and link your account.
+  _(You can use a dummy username and dummy password)_
 * Button **Account data**: Gets the account information related to the link; if the link is not in the list of current accounts retrieves it.
 * Button **All Data**: Gets all the data related to the sandbox account:
   * Pie charts per currency.
@@ -19,6 +46,7 @@ ___
 
 ### Feedback to Belvo:
 
-* Response request using ruby symbols not string keys.
+* Response requests using ruby symbols instead of string keys.
 * Search endpoint to find accounts/other using different attributes ("link", "owner_id", etc.)
-* Full functional guide snippets.
+* Guide with ready-to-test snippets.
+* Postman with default sandbox credentials.
