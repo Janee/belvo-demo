@@ -28,6 +28,8 @@ belvo:
 ```
 
 ___
+> **This integration works with sandbox**, you may need to change the URL (for `https://api.belvo.co`) inside `app/services/` for the service you need if you want to play with production.
+___
 
 ### Instructions for testing
 Ruby on Rails application deployed in Heroku Server.
@@ -46,7 +48,4 @@ ___
 
 ### Feedback to Belvo:
 
-* Response requests using ruby symbols instead of string keys.
-* Filter and search doc from accounts/others while usinging different attributes in API Reference.
-* Guide with ready-to-test snippets.
-* Postman with default sandbox credentials.
+Please write to hello@belvo.com and share your experience and how we can improve our product. 
